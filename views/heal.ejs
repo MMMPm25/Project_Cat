@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+        background-image: url("../img/black.jpeg");
+        background-size: cover;
+      }
+        @media screen and (max-width: 1000px) and (min-width: 500px) {
+        div.head img {
+            width: 110px;
+            height: 100px;
+          }
+          div.head>ul>li{
+            font-size: 15px;
+          }
+          div.head h1{
+            font-size: 45px;
+          }
+          div.head{
+            display: flex;
+            height:100px
+          }
+          div.name{
+            font-size: 10px;
+          }
+        }
+         .head{
+            display: flex;
+            box-shadow: 10px 10px 5px rgb(13, 13, 13);
+            background-color: brown;
+        }
+        .head>ul{
+            text-align: left;
+            margin: auto;
+            margin-left: -20px;
+            
+        }
+        .head>ul>li{
+            display:inline;
+            font-size: 25px;
+            background-color: aliceblue;
+            padding: 3px;
+            
+           
+        }
+        .head>ul>li>a{
+                text-decoration: 0;
+            }
+            a:hover {
+                color: red;
+                background-color: transparent;
+                text-decoration: 0;
+            }
+        .head img{
+            width: 200px;
+
+        }
+        .head h1{
+            font-size: 60px;
+        }
+        button{
+        margin: 50px 10px 20px;
+        width: 100px;
+        height: 50px;
+        }
+        .cat{
+            justify-content: center;
+            display: block;
+            text-align: center;
+            
+        }
+      
+        .incat{
+            margin: auto;
+            color: aliceblue;
+        }
+        .name{
+  margin: auto;
+  font-size: 25px;
+  color:aliceblue;
+  padding:10px;
+  background-color: black;
+}
+        </style>
+</head>
+<body>
+    <div class = "head">
+        <img src ="../img/logo.png">
+        <h1>CKL</h1>
+        <ul>
+            <li><a href="/home">หน้าหลัก</a></li>
+            <li><a href="/popcat">แมวยอดนิยม</a></li>
+            <li><a href="/breedcat">สายพันธ์ุ</a></li>
+            <li><a>ดูแลรักษา</a></li>
+            <li><a href="/catcontact">ติดต่อเรา</a></li>
+        </ul>
+        
+        <% if (loggedIn) { %>
+            <div class = "name">
+                <%= UserData.name  %>
+            </div>
+         <button onclick="Logout();">Logout</button>
+        <% } %>
+        <% if (!loggedIn) { %>
+          <button onclick="Signin();">Sign In</button>
+          <button onclick="Signup();">Sign Up</button>
+          
+         <% } %>
+
+
+
+        <script>
+            function Signin(){
+                window.location='/login';
+            }
+        </script>
+        <script>
+            function Signup(){
+                window.location='/register';
+            }
+        </script>
+          <script>
+            function Logout(){
+                window.location='/logout';
+            }
+        </script>
+        
+    </div>
+    <div class="cat">
+        <div class="incat">
+            
+            <p><a href="/babycat"><img src="../img/babycat.png" alt width="250" height="200"></a></p>
+            <h2>ลูกเเมว</h2>
+        </div>
+        <div class="incat">
+            <p><a href="/adult"><img src="../img/adultcat.png" alt width="250" height="200"></a></p>
+            <h2>เเมวโต</h2>
+        </div>
+        <div class="incat">
+            <p><a href="/oldcat"><img src="../img/oldcat.jpg" alt width="250" height="200"></a></p>
+            <h2>เเมวสูงวัย</h2>
+        </div>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+          background-image: url("../img/black.jpeg");
+          background-size: cover;
+        }
+          @media screen and (max-width: 1000px) and (min-width: 500px) {
+          div.head img {
+              width: 110px;
+              height: 100px;
+            }
+            div.head>ul>li{
+              font-size: 15px;
+            }
+            div.head h1{
+              font-size: 45px;
+            }
+            div.head{
+              display: flex;
+              height:100px
+            }
+            div.name{
+              font-size: 10px;
+            }
+            div.men img{
+              width: 450px;
+              height: 400px;
+            }
+          }
+          .head{
+              display: flex;
+              box-shadow: 10px 10px 5px rgb(13, 13, 13);
+              background-color: brown;
+          }
+          .head>ul{
+              text-align: left;
+              margin: auto;
+              margin-left: -20px;
+              
+          }
+          .head>ul>li{
+              display:inline;
+              font-size: 25px;
+              background-color: aliceblue;
+              padding: 3px;
+              
+             
+          }
+          .head>ul>li>a{
+                text-decoration: 0;
+            }
+            a:hover {
+                color: red;
+                background-color: transparent;
+                text-decoration: 0;
+            }
+          .head img{
+              width: 200px;
+  
+          }
+          .head h1{
+              font-size: 60px;
+          }
+          button{
+          margin: 50px 10px 20px;
+          width: 100px;
+          height: 50px;
+    
+  }
+  .name{
+    margin: auto;
+    font-size: 25px;
+    color:aliceblue;
+    padding:10px;
+    background-color: black;
+  }
+            .men{
+                background-color: aliceblue;
+                font-size: 20px;
+            }
+            .men img{
+                float: left;
+            }
+          </style>
+</head>
+<body>
+    <div class = "head">
+        <img src ="../img/logo.png">
+        <h1>CKL</h1>
+        <ul>
+            <li><a href="/home">หน้าหลัก</a></li>
+            <li><a href="/popcat">แมวยอดนิยม</a></li>
+            <li><a>สายพันธ์ุ</a></li>
+            <li><a href="/heal">ดูแลรักษา</a></li>
+            <li><a href="/catcontact">ติดต่อเรา</a></li>
+        </ul>
+        <% if (loggedIn) { %>
+            <div class = "name">
+                <%= UserData.name  %>
+                
+              </div>
+         <button onclick="Logout();">Logout</button>
+        <% } %>
+   
+        <% if (!loggedIn) { %>
+          <button onclick="Signin();">Sign In</button>
+          <button onclick="Signup();">Sign Up</button>
+          
+         <% } %>
+
+
+         
+        <script>
+            function Signin(){
+                window.location='/login';
+            }
+        </script>
+        <script>
+            function Signup(){
+                window.location='/register';
+            }
+        </script>
+          <script>
+            function Logout(){
+                window.location='/logout';
+            }
+        </script>
+        <script>
+          function Addcat(){
+              window.location='/catadd';
+          }
+      </script>
+       
+    </div>
+    <div class="men">
+        <img src ="../img/men.jpg">
+        <h2>แมวเมนคูน</h2>
+        <dd>แมวเมนคูนเป็นสายพันธุ์แมวขนาดใหญ่ที่สุดในโลก รูปร่างแข็งแรงกำยาและขาแข็งแรง 
+            หัวทรงเหลี่ยม ใบหูใหญ่และตั้งตรง ขนด้านนอกมีลักษณะยาวหนาเป็นมันและกันน้ำได้ดี 
+            มีขนชั้นในซ่อนอยู่ข้างใต้ ส่วนขนที่หัว คอและไหล่จะสั้นกว่าจุดอื่นแต่จะค่อย ๆ ยาวขึ้นเรื่อย ๆ
+             บริเวณส่วนหลัง ข้างลำตัวและหาง ส่วนท้องกับสะโพกมีขนดกและหนา ที่โคนหูจะมีขนยาวเป็นพู่งามสง่า
+              โดยแมวเมนคูนเพศผู้จะมีขนส่วนนี้หนากว่าเพศเมีย ส่วนขนที่หางจะยาวนุ่มสลวย 
+              บริเวณปลายหูจะมีขนยาวแซมออกมา เช่นเดียวกับบริเวณอุ้งเท้า มองผ่าน ๆ 
+              เหมือนใส่รองเท้าขนฟูหุ้มอีกชั้น แมวเมนคูนเป็นแมวสายพันธุ์ที่เพาะเลี้ยงออกมาได้หลายสี
+               มากกว่า 30 สีเลยทีเดียว ส่วนสีตาอาจมีสีเขียว ทองหรือทองแดง แต่ถ้าแมวสีขาวอาจมีตาสีฟ้าหรือตาสองสีก็ได้</dd>
+        <h2>ลักษณะนิสัย</h2>
+        <dd>แมวเมนคูนมีนิสัยอ่อนโยน ขี้เล่นและเป็นมิตร ชอบอยู่ใกล้คนและเป็นสัตว์เลี้ยงที่ดี 
+            อาจเป็นเพราะลักษณะที่ไม่เย่อหยิ่งทำให้พบแมวเมนคูนนอนขดอยู่ในที่แปลก ๆ ได้ 
+            แมวเมนคูนรักการผจญภัยทำให้ต้องมีที่ให้ปีนป่ายและกระตุ้นสัญชาตญาณนักล่า 
+            แมวเมนคูนยังเป็นที่รู้จักว่าชอบทำเสียงออดอ้อนเป็นพิเศษอีกด้วย</dd>
+        <h2>ประวัติและถิ่นกำเนิด</h2>
+        <dd>ประเทศต้นกำเนิด: สหรัฐอเมริกา
+
+            บรรพบุรุษของแมวเมนคูนเป็นแมวขนยาวที่ถูกนำเข้าไปรัฐเมนโดยชาวเรือในช่วงทศวรรษ 
+            1850 หลังจากนั้นได้ผสมพันธุ์กับแมวพื้นถิ่นขนสั้น ลูกที่ออกมาตัวใหญ่ รูปร่างแข็งแรง 
+            มีขนยาวปานกลาง มีหางยาวเป็นพวงคล้ายหางแร็คคูน จึงเป็นที่มาของชื่อพันธุ์ “เมนคูน” 
+            นั่นเอง แมวพันธุ์นี้ได้ปรับตัวให้มีขนที่หนาขึ้นเพื่อให้ทนกับอากาศที่หนาวเย็นของรัฐเมนได้ 
+            ในช่วงต้นทศววรรษ 1860 ได้มีการจัดแสดงแมวเมนคูนครั้งพิเศษ ทำให้แมวพันธุ์นี้เป็นที่รู้จักและนำมาเลี้ยงเป็นสัตว์เลี้ยงมากขึ้น 
+            ช่วงทศวรรษ 1980 ได้มีผู้นำแมวพันธุ์นี้เข้าไปยังสหราชอาณาจักร</dd>
+    </div>
+</body>
+</html>
